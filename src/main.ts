@@ -35,7 +35,29 @@ export default class VueSamplePlugin extends Plugin {
                 active: true,
             });
         }
-        
+        // 监听视图状态变化
+        // 注册视图状态变化监听
+        this.registerEvent(
+            this.app.workspace.on('active-leaf-change', (leaf) => {
+                if (leaf?.view instanceof ReadMeView) {
+                    // 获取 status bar
+                    const statusBarEl = this.app.workspace.containerEl.querySelector('.status-bar');
+                    if (statusBarEl) {
+                        statusBarEl.empty();
+                        
+                        // 创建通知按钮
+                        const noticeBtn = statusBarEl.createEl('button', {
+                            text: '显示通知',
+                            cls: 'status-bar-item'
+                        });
+                        
+                        noticeBtn.addEventListener('click', () => {
+                            this.app.notices.show('这是一条来自 Vue Lab 的通知！', 3000);
+                        });
+                    }
+                }
+            })
+        );
         workspace.revealLeaf(leaf);
     }
 }
