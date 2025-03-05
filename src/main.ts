@@ -29,7 +29,7 @@ export default class VueSamplePlugin extends Plugin {
         
         let leaf = workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE)[0];
         if (!leaf) {
-            leaf = workspace.getLeaf('split');
+            leaf = workspace.getLeaf(true);
             await leaf.setViewState({
                 type: VIEW_TYPE_EXAMPLE,
                 active: true,
