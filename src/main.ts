@@ -1,6 +1,6 @@
 import { Plugin } from "obsidian";
 import { VueSamplePluginSettingTab } from "./setting-tab";
-import { ExampleView, VIEW_TYPE_EXAMPLE } from "./view";
+import { ReadMeView, VIEW_TYPE_EXAMPLE } from "./view/readme-view";
 
 // 注册插件
 export default class VueSamplePlugin extends Plugin {
@@ -12,7 +12,7 @@ export default class VueSamplePlugin extends Plugin {
         // 注册视图
         this.registerView(
             VIEW_TYPE_EXAMPLE,
-            (leaf) => new ExampleView(leaf)
+            (leaf) => new ReadMeView(leaf)
         );
 
         // 添加功能区图标
