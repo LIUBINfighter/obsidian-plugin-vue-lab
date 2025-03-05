@@ -1,8 +1,59 @@
 /*
+ * Readme View Styles
+ */
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+/* 主容器样式 */
+.readme-view-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-If your plugin does not need CSS, delete this file.
+/* 语言选择器样式 */
+.language-selector {
+    text-align: right;
+    margin-bottom: 20px;
+}
 
-*/
+.language-selector select {
+    padding: 4px 8px;
+    border-radius: 4px;
+    min-width: 120px;
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* 内容区域样式 */
+.readme-content {
+    background-color: var(--background-primary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.readme-content h1 {
+    margin-bottom: 16px;
+    color: var(--text-normal);
+}
+
+.readme-content .description {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+/* 按钮样式 */
+.readme-content button {
+    margin-top: 16px;
+    padding: 6px 12px;
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.readme-content button:hover {
+    background-color: var(--interactive-accent-hover);
+}

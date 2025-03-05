@@ -12,7 +12,7 @@ export default class VueSamplePlugin extends Plugin {
         // 注册视图
         this.registerView(
             VIEW_TYPE_EXAMPLE,
-            (leaf) => new ReadMeView(leaf)
+            (leaf) => new ReadMeView(leaf, this)
         );
 
         // 添加功能区图标

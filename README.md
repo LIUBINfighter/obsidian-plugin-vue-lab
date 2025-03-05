@@ -1,4 +1,4 @@
-
+# Obsidian Plugin Vue Lab
 
 ## Kanban
 
@@ -39,6 +39,21 @@ vue3 + naive-ui
 ### ChatView (workspace-leaf)
 
 和一个带有合适yaml的文件相绑定
+
+## 样式管理 styles.css
+
+不使用Vue 组件 scoped
+使用 类名css
+
+在 Obsidian 插件开发中的建议：
+
+- 推荐使用类名 CSS，因为：
+  1. 更容易使用 Obsidian 的主题变量
+  2. 更好的性能表现
+  3. 便于统一管理样式
+  4. 更容易与 Obsidian 的现有样式系统集成
+
+如果您担心样式冲突，可以采用 BEM 命名规范。
 
 ## Reference
 

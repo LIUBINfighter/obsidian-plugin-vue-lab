@@ -1,14 +1,17 @@
 import { ItemView, WorkspaceLeaf } from "obsidian";
 import { createApp } from "vue";
 import ReadmeContent from "../components/ReadmeContent.vue";
+import { i18n } from '../i18n';
 
 export const VIEW_TYPE_EXAMPLE = "readme-view";
 
 export class ReadMeView extends ItemView {
-    private vueApp: any; // Vue 应用实例
+    private vueApp: any;
+    private plugin: any; // 插件实例
 
-    constructor(leaf: WorkspaceLeaf) {
+    constructor(leaf: WorkspaceLeaf, plugin: any) {
         super(leaf);
+        this.plugin = plugin;
     }
 
     getViewType() {
@@ -24,16 +27,24 @@ export class ReadMeView extends ItemView {
         container.empty();
         container.addClass('readme-view-container');
         
-        // 创建 Vue 应用挂载点
         const mountPoint = container.createDiv('vue-root');
         
-        // 创建并挂载 Vue 应用
-        this.vueApp = createApp(ReadmeContent);
+        // 从设置中读取语言
+        const savedData = await this.plugin.loadData() || {};
+        if (savedData.locale) {
+            i18n.global.locale.value = savedData.locale;
+        }
+        
+        this.vueApp = createApp(ReadmeContent, {
+            onLocaleChange: async (locale: string) => {
+                await this.plugin.saveData({ ...savedData, locale });
+            }
+        });
+        this.vueApp.use(i18n);
         this.vueApp.mount(mountPoint);
     }
 
     async onClose() {
-        // 清理 Vue 应用
         if (this.vueApp) {
             this.vueApp.unmount();
             this.vueApp = null;
