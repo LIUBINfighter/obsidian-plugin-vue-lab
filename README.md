@@ -1,12 +1,31 @@
 # Obsidian Plugin Vue Lab
+[开发日记](./dairy.md)
+## Feature
+
+解决痛点：
+
+- 设置页面，模态框和边栏操作繁琐，压缩空间和思考
+- 插件下载安装后直接使用，导致不能查看详细的设置和readme不能兼得的问题
+
+设计思维：
+
+- vue3 + naive-ui
+- 以Workspace为主要开发内容。避免过多使用边栏以及SettingTab。
+- 提供方便的 i18n 支持
 
 ## Kanban
 
-todo: ChatView
+### todo
 
-wip: ReadMeView
+- ChatView
 
-Done: SettingTab
+### wip
+
+- ReadMeView
+
+### Done
+
+- SettingTab
 
 ## Tech stack
 
