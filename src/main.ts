@@ -22,6 +22,42 @@ export default class VueSamplePlugin extends Plugin {
             (leaf) => new GalleryView(leaf, this)
         );
 
+// 添加 ribbon icon
+this.addRibbonIcon(
+    'dice',
+    'Vue Lab',
+    (evt: MouseEvent) => {
+        // 激活视图
+        this.activateView();
+    }
+);
+
+// 添加 Gallery ribbon icon
+this.addRibbonIcon(
+    'image-file',
+    'Vue Lab Gallery',
+    (evt: MouseEvent) => {
+        // 激活图库视图
+        this.activateGalleryView();
+    }
+);
+
+// 注册命令
+this.addCommand({
+    id: 'open-vue-lab-readme',
+    name: '打开 Vue Lab ReadMe 视图',
+    callback: () => {
+        this.activateView();
+    }
+});
+
+this.addCommand({
+    id: 'open-vue-lab-gallery',
+    name: '打开 Vue Lab Gallery 视图',
+    callback: () => {
+        this.activateGalleryView();
+    }
+});
 
     }
     // 在用户禁用插件时触发，插件所调用的任何资源必须在这里得到释放，以防止 Obsidian 的性能受到影响

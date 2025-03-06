@@ -1,7 +1,7 @@
 import { ItemView, WorkspaceLeaf } from "obsidian";
 import { VIEW_TYPES } from "../constants";
 import { createApp } from "vue";
-import ReadmeContent from "../components/ReadmeContent.vue";
+import ReadmeAbstract from "../components/ReadmeAbstract.vue";
 import { i18n } from '../i18n';
 
 // 删除这行，因为我们现在使用 constants.ts 中的定义
@@ -37,7 +37,7 @@ export class ReadMeView extends ItemView {
             i18n.global.locale.value = savedData.locale;
         }
         
-        this.vueApp = createApp(ReadmeContent, {
+        this.vueApp = createApp(ReadmeAbstract, {
             onLocaleChange: async (locale: string) => {
                 await this.plugin.saveData({ ...savedData, locale });
             }
