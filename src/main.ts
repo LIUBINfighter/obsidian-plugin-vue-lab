@@ -1,7 +1,8 @@
 import { Plugin } from "obsidian";
 import { VueSamplePluginSettingTab } from "./setting-tab";
-import { ReadMeView, VIEW_TYPE_EXAMPLE } from "./view/readme-view";
-
+import { ReadMeView } from "./view/readme-view";
+import { GalleryView } from "./view/gallery-view";
+import { VIEW_TYPES } from "./constants";
 // 注册插件
 export default class VueSamplePlugin extends Plugin {
     // 在用户激活插件和插件更新时触发，这将是您设置插件大部分功能的地方
@@ -9,29 +10,33 @@ export default class VueSamplePlugin extends Plugin {
         // 加入插件设置页
         this.addSettingTab(new VueSamplePluginSettingTab(this.app, this));
 
-        // 注册视图
+        // 注册 ReadMe 视图
         this.registerView(
-            VIEW_TYPE_EXAMPLE,
+            VIEW_TYPES.README,
             (leaf) => new ReadMeView(leaf, this)
         );
 
-        // 添加功能区图标
-        this.addRibbonIcon("dice", "激活示例视图", () => {
-            this.activateView();
-        });
+        // 注册 Gallery 视图
+        this.registerView(
+            VIEW_TYPES.GALLERY,
+            (leaf) => new GalleryView(leaf, this)
+        );
+
+
     }
     // 在用户禁用插件时触发，插件所调用的任何资源必须在这里得到释放，以防止 Obsidian 的性能受到影响
     onunload() {
     }
 
+    // 修改 activateView 方法
     async activateView() {
         const { workspace } = this.app;
         
-        let leaf = workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE)[0];
+        let leaf = workspace.getLeavesOfType(VIEW_TYPES.README)[0];
         if (!leaf) {
             leaf = workspace.getLeaf(true);
             await leaf.setViewState({
-                type: VIEW_TYPE_EXAMPLE,
+                type: VIEW_TYPES.README,
                 active: true,
             });
         }
@@ -58,6 +63,20 @@ export default class VueSamplePlugin extends Plugin {
                 }
             })
         );
+        workspace.revealLeaf(leaf);
+    }
+    // 添加 activateGalleryView 方法
+    async activateGalleryView() {
+        const { workspace } = this.app;
+        
+        let leaf = workspace.getLeavesOfType(VIEW_TYPES.GALLERY)[0];
+        if (!leaf) {
+            leaf = workspace.getLeaf(true);
+            await leaf.setViewState({
+                type: VIEW_TYPES.GALLERY,
+                active: true,
+            });
+        }
         workspace.revealLeaf(leaf);
     }
 }

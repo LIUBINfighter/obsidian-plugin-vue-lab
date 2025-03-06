@@ -1,9 +1,11 @@
 import { ItemView, WorkspaceLeaf } from "obsidian";
+import { VIEW_TYPES } from "../constants";
 import { createApp } from "vue";
 import ReadmeContent from "../components/ReadmeContent.vue";
 import { i18n } from '../i18n';
 
-export const VIEW_TYPE_EXAMPLE = "readme-view";
+// 删除这行，因为我们现在使用 constants.ts 中的定义
+// export const VIEW_TYPE_EXAMPLE = "readme-view";
 
 export class ReadMeView extends ItemView {
     private vueApp: any;
@@ -15,9 +17,9 @@ export class ReadMeView extends ItemView {
     }
 
     getViewType() {
-        return VIEW_TYPE_EXAMPLE;
+        return VIEW_TYPES.README;
     }
-
+    
     getDisplayText() {
         return "Vue Lab Readme View";
     }

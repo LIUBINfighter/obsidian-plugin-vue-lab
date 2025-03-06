@@ -57,3 +57,117 @@
 .readme-content button:hover {
     background-color: var(--interactive-accent-hover);
 }
+
+
+/* 为Gallery视图添加样式 */
+.gallery-container {
+  padding: 16px;
+}
+
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 暗色主题适配 */
+.theme-dark .dropzone {
+  border-color: #555;
+}
+
+.theme-dark .item {
+  background: #2d3033;
+  border-color: #444;
+}
+
+.theme-dark .placeholder {
+  color: #aaa;
+}
+/* 现有的 Gallery 样式 */
+.gallery-container {
+  padding: 16px;
+}
+
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 添加更多 Gallery 样式 */
+.dropzone {
+  border: 2px dashed var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.dropzone.active {
+  background-color: var(--background-modifier-hover);
+  border-color: var(--interactive-accent);
+}
+
+.placeholder {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.item {
+  position: relative;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 10px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.item-content {
+  word-break: break-word;
+  text-align: center;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--background-modifier-error);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.remove-btn:hover {
+  opacity: 1;
+}
+
+/* 暗色主题适配 */
+.theme-dark .dropzone {
+  border-color: #555;
+}
+
+.theme-dark .item {
+  background: #2d3033;
+  border-color: #444;
+}
+
+.theme-dark .placeholder {
+  color: #aaa;
+}
