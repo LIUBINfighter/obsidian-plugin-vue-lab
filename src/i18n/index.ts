@@ -11,7 +11,46 @@ const messages = {
             title: 'Vue Lab Plugin Documentation',
             description: 'This is a sample plugin demonstrating Vue usage in Obsidian',
             selectLang: 'Select Language',
-            clickCount: 'Click Count: {count}'
+            clickCount: 'Click Count: {count}',
+            document: {
+                introduction: {
+                    title: '# Introduction',
+                    sections: [
+                        {
+                            subtitle: '## Overview',
+                            content: [
+                                'Welcome to Vue Lab Plugin, a powerful tool for Obsidian.',
+                                'This plugin demonstrates the seamless integration of Vue.js within Obsidian, providing a modern development experience.',
+                                'You can use this plugin as a template to build your own Vue-based Obsidian plugins.'
+                            ]
+                        },
+                        {
+                            subtitle: '## Installation',
+                            content: [
+                                '1. Download the latest version of this plugin',
+                                '2. Extract to your Obsidian plugins directory',
+                                '3. Enable the plugin in Obsidian settings'
+                            ]
+                        },
+                        {
+                            subtitle: '## Configuration',
+                            content: [
+                                'This plugin provides the following configuration options:',
+                                '- Language selection: Switch interface language',
+                                '- Theme settings: Customize plugin appearance'
+                            ]
+                        }
+                    ]
+                },
+                features: {
+                    title: '# Key Features',
+                    sections: []
+                },
+                usage: {
+                    title: '# Usage Guide',
+                    sections: []
+                }
+            }
         }
     },
     zh: {
@@ -19,7 +58,46 @@ const messages = {
             title: 'Vue Lab 插件文档',
             description: '这是一个演示在 Obsidian 中使用 Vue 的示例插件',
             selectLang: '选择语言',
-            clickCount: '点击次数：{count}'
+            clickCount: '点击次数：{count}',
+            document: {
+                introduction: {
+                    title: '# 介绍',
+                    sections: [
+                        {
+                            subtitle: '## 概述',
+                            content: [
+                                '欢迎使用 Vue Lab 插件，这是一个强大的 Obsidian 工具。',
+                                '本插件展示了 Vue.js 在 Obsidian 中的无缝集成，提供现代化的开发体验。',
+                                '您可以将此插件作为模板来构建自己的基于 Vue 的 Obsidian 插件。'
+                            ]
+                        },
+                        {
+                            subtitle: '## 安装方法',
+                            content: [
+                                '1. 下载本插件的最新版本',
+                                '2. 解压到 Obsidian 插件目录',
+                                '3. 在 Obsidian 设置中启用插件'
+                            ]
+                        },
+                        {
+                            subtitle: '## 配置说明',
+                            content: [
+                                '本插件提供了以下配置选项：',
+                                '- 语言选择：切换界面语言',
+                                '- 主题设置：自定义插件外观'
+                            ]
+                        }
+                    ]
+                },
+                features: {
+                    title: '# 主要特性',
+                    sections: []
+                },
+                usage: {
+                    title: '# 使用指南',
+                    sections: []
+                }
+            }
         }
     }
 }

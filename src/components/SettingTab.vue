@@ -18,3 +18,5 @@ export default defineComponent({
     }
 })
 </script>
+
+<!-- 不使用scoped 样式添加在根目录的style.css 使用obsidian原生样式 -->

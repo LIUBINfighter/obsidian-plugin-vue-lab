@@ -12,6 +12,9 @@
       <p>{{ t('message.description') }}</p>
     </div>
     <button @click="count++">{{ t('message.clickCount', { count }) }}</button>
+    
+    <!-- 添加新的文档内容组件 -->
+    <DocumentContent />
   </div>
 </template>
 
@@ -19,6 +22,7 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { LANGUAGES } from '../i18n'
+import DocumentContent from './DocumentContent.vue'
 
 const props = defineProps<{
   onLocaleChange?: (locale: string) => void
@@ -33,25 +37,3 @@ const handleLocaleChange = (event: Event) => {
   props.onLocaleChange?.(newLocale)
 }
 </script>
-
-<style scoped>
-.readme-content {
-  padding: 20px;
-}
-
-.language-selector {
-  text-align: right;
-  margin-bottom: 20px;
-}
-
-select {
-  padding: 4px 8px;
-  border-radius: 4px;
-  min-width: 120px;
-}
-
-button {
-  margin-top: 16px;
-  padding: 6px 12px;
-}
-</style>
