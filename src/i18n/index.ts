@@ -8,10 +8,12 @@ export const LANGUAGES = {
 const messages = {
     en: {
         message: {
+			// ReadmeAbstract
             title: 'Vue Lab Plugin Documentation',
             description: 'This is a sample plugin demonstrating Vue usage in Obsidian',
             selectLang: 'Select Language',
             clickCount: 'Click Count: {count}',
+			// ReadmeDocument
             document: {
                 introduction: {
                     title: '# 1. Introduction',

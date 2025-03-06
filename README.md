@@ -1,5 +1,10 @@
 # Obsidian Plugin Vue Lab
+
 [开发日记](./dairy.md)
+
+开发遵循：
+- css只使用原生obsidian css 类名进行定义，不使用vue的scop
+
 ## Feature
 
 解决痛点：
@@ -12,6 +17,10 @@
 - vue3 + naive-ui
 - 以Workspace为主要开发内容。避免过多使用边栏以及SettingTab。
 - 提供方便的 i18n 支持
+
+已有内容：
+
+- 插件通用readme-view, robbin icon/command呼出，固定唯一的视图（无论怎么呼出都会跳转到唯一界面）
 
 ## Kanban
 

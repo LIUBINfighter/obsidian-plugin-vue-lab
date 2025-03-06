@@ -15,6 +15,7 @@
     
     <!-- 添加新的文档内容组件 -->
     <ReadmeContent />
+	<meme />
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { LANGUAGES } from '../i18n'
 import ReadmeContent from './ReadmeContent.vue'
+import meme from './img/meme.vue'
 
 const props = defineProps<{
   onLocaleChange?: (locale: string) => void

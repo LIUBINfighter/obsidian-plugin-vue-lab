@@ -10,6 +10,7 @@ import { i18n } from '../i18n';
 export class ReadMeView extends ItemView {
     private vueApp: any;
     private plugin: any; // 插件实例
+    private activeLeafHandler: () => void;
 
     constructor(leaf: WorkspaceLeaf, plugin: any) {
         super(leaf);
@@ -23,8 +24,19 @@ export class ReadMeView extends ItemView {
     getDisplayText() {
         return "Vue Lab Readme View";
     }
+    
+    private clearStatusBar() {
+        const statusBarEl = this.containerEl.querySelector('.status-bar');
+        if (statusBarEl) {
+            statusBarEl.empty();
+        }
+    }
 
     async onOpen() {
+        this.clearStatusBar();
+        // 注册选项卡切换事件监听器
+        this.activeLeafHandler = () => this.clearStatusBar();
+        this.app.workspace.on('active-leaf-change', this.activeLeafHandler);
         const container = this.containerEl.children[1];
         container.empty();
         container.addClass('readme-view-container');
@@ -47,6 +59,9 @@ export class ReadMeView extends ItemView {
     }
 
     async onClose() {
+        // 取消注册选项卡切换事件监听器
+        this.app.workspace.off('active-leaf-change', this.activeLeafHandler);
+        this.clearStatusBar();
         if (this.vueApp) {
             this.vueApp.unmount();
             this.vueApp = null;
