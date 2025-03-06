@@ -14,10 +14,10 @@ const messages = {
             clickCount: 'Click Count: {count}',
             document: {
                 introduction: {
-                    title: '# Introduction',
+                    title: '# 1. Introduction',
                     sections: [
                         {
-                            subtitle: '## Overview',
+                            subtitle: '## 1.1 Overview',
                             content: [
                                 'Welcome to Vue Lab Plugin, a powerful tool for Obsidian.',
                                 'This plugin demonstrates the seamless integration of Vue.js within Obsidian, providing a modern development experience.',
@@ -25,7 +25,7 @@ const messages = {
                             ]
                         },
                         {
-                            subtitle: '## Installation',
+                            subtitle: '## 1.2 Installation',
                             content: [
                                 '1. Download the latest version of this plugin',
                                 '2. Extract to your Obsidian plugins directory',
@@ -33,21 +33,42 @@ const messages = {
                             ]
                         },
                         {
-                            subtitle: '## Configuration',
+                            subtitle: '## 1.3 Configuration',
                             content: [
                                 'This plugin provides the following configuration options:',
                                 '- Language selection: Switch interface language',
                                 '- Theme settings: Customize plugin appearance'
                             ]
+                        },
+                        {
+                            subtitle: '## 1.4 Development Setup',
+                            content: [
+                                '### Initial Setup',
+                                '```bash',
+                                'npm i',
+                                '```',
+                                '',
+                                '### Development Mode',
+                                '```bash',
+                                'npm run dev',
+                                '```',
+                                '',
+                                '### Build for Production',
+                                '```bash',
+                                'npm run build',
+                                '```',
+                                '',
+                                'The development mode will watch for file changes and automatically rebuild the plugin.'
+                            ]
                         }
                     ]
                 },
                 features: {
-                    title: '# Key Features',
+                    title: '# 2. Key Features',
                     sections: []
                 },
                 usage: {
-                    title: '# Usage Guide',
+                    title: '# 3. Usage Guide',
                     sections: []
                 }
             }
@@ -61,10 +82,10 @@ const messages = {
             clickCount: '点击次数：{count}',
             document: {
                 introduction: {
-                    title: '# 介绍',
+                    title: '# 1. 介绍',
                     sections: [
                         {
-                            subtitle: '## 概述',
+                            subtitle: '## 1.1 概述',
                             content: [
                                 '欢迎使用 Vue Lab 插件，这是一个强大的 Obsidian 工具。',
                                 '本插件展示了 Vue.js 在 Obsidian 中的无缝集成，提供现代化的开发体验。',
@@ -72,7 +93,7 @@ const messages = {
                             ]
                         },
                         {
-                            subtitle: '## 安装方法',
+                            subtitle: '## 1.2 安装方法',
                             content: [
                                 '1. 下载本插件的最新版本',
                                 '2. 解压到 Obsidian 插件目录',
@@ -80,21 +101,42 @@ const messages = {
                             ]
                         },
                         {
-                            subtitle: '## 配置说明',
+                            subtitle: '## 1.3 配置说明',
                             content: [
                                 '本插件提供了以下配置选项：',
                                 '- 语言选择：切换界面语言',
                                 '- 主题设置：自定义插件外观'
                             ]
+                        },
+                        {
+                            subtitle: '## 1.4 开发设置',
+                            content: [
+                                '### 初始设置',
+                                '```bash',
+                                'npm i',
+                                '```',
+                                '',
+                                '### 开发模式',
+                                '```bash',
+                                'npm run dev',
+                                '```',
+                                '',
+                                '### 生产构建',
+                                '```bash',
+                                'npm run build',
+                                '```',
+                                '',
+                                '开发模式将监视文件变化并自动重新构建插件。'
+                            ]
                         }
                     ]
                 },
                 features: {
-                    title: '# 主要特性',
+                    title: '# 2. 主要特性',
                     sections: []
                 },
                 usage: {
-                    title: '# 使用指南',
+                    title: '# 3. 使用指南',
                     sections: []
                 }
             }
